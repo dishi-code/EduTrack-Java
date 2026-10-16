@@ -1,0 +1,37 @@
+:root{--bg:#f3f6f9;--card:#fff;--ink:#0f1b2d;--mute:#5b6b7f;--line:#dde4ec;--acc:#0e7c86;--accbg:#e2f3f4;--warn:#c2410c;--warnbg:#fdeee6;--hl:#ffe08a;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);color-scheme:light}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0c141f;--card:#142031;--ink:#e8eef6;--mute:#93a4b8;--line:#25354a;--acc:#4fd1c5;--accbg:#10343a;--warn:#fb923c;--warnbg:#3a2314;--hl:#6b5a14;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#0c141f;--card:#142031;--ink:#e8eef6;--mute:#93a4b8;--line:#25354a;--acc:#4fd1c5;--accbg:#10343a;--warn:#fb923c;--warnbg:#3a2314;--hl:#6b5a14;color-scheme:dark}
+*{box-sizing:border-box}html,body{margin:0}
+body{font-family:'Plus Jakarta Sans',system-ui,sans-serif;background:var(--bg);color:var(--ink);line-height:1.5}
+.app{display:grid;grid-template-columns:230px 1fr;min-height:100vh}
+nav{background:var(--card);border-right:1px solid var(--line);padding:22px 14px;position:sticky;top:0;height:100vh;overflow:auto}
+.brand{font-weight:800;font-size:22px;padding:0 10px 4px}.brand span{color:var(--acc)}
+.tag{font-size:12px;color:var(--mute);padding:0 10px 18px}
+nav button{display:block;width:100%;text-align:left;border:0;background:none;color:var(--ink);font:inherit;font-size:14px;padding:9px 10px;border-radius:8px;cursor:pointer}
+nav button:hover{background:var(--bg)}nav button.on{background:var(--accbg);color:var(--acc);font-weight:700}
+main{padding:28px;max-width:1000px;width:100%}
+h1{font-size:26px;margin:0 0 4px;letter-spacing:-.4px}.sub{color:var(--mute);margin:0 0 22px;font-size:14px}
+h3{font-size:15px;margin:0 0 10px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:18px;margin-bottom:16px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:14px}
+.mod{cursor:pointer;border:1px solid var(--line);border-radius:12px;padding:16px;background:var(--card);text-align:left;font:inherit;color:inherit}
+.mod:hover{border-color:var(--acc)}.mod b{display:block;margin-bottom:4px}.mod small{color:var(--mute)}
+.pill{display:inline-block;font-size:11px;font-weight:700;background:var(--accbg);color:var(--acc);padding:2px 8px;border-radius:99px;margin:6px 4px 0 0}
+.pill.w{background:var(--warnbg);color:var(--warn)}
+input,select{font:inherit;font-size:14px;padding:9px 11px;border:1px solid var(--line);border-radius:8px;background:var(--bg);color:var(--ink);min-width:0}
+.btn{font:inherit;font-size:14px;font-weight:700;padding:9px 16px;border:0;border-radius:8px;background:var(--acc);color:#fff;cursor:pointer}
+:root:not([data-theme="light"]) .btn{color:#05211f}
+.btn.ghost{background:var(--accbg);color:var(--acc)}
+:focus-visible{outline:2px solid var(--acc);outline-offset:2px}
+.row{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-bottom:12px}.row input{flex:1;min-width:120px}
+.scroll{overflow-x:auto}table{width:100%;border-collapse:collapse;font-size:14px}
+th,td{text-align:left;padding:9px 10px;border-bottom:1px solid var(--line);white-space:nowrap}th{color:var(--mute);font-weight:500;font-size:13px}
+mark{background:var(--hl);color:inherit;border-radius:3px;padding:0 1px}
+.res{border-top:1px solid var(--line);padding:10px 0;font-size:14px}.res:first-child{border:0}
+.meta{color:var(--mute);font-size:13px}.warn{background:var(--warnbg);color:var(--warn);padding:10px 12px;border-radius:8px;margin-bottom:8px;font-size:14px}
+.ok{background:var(--accbg);color:var(--acc);padding:10px 12px;border-radius:8px;font-size:14px}
+.bar{display:flex;align-items:center;gap:10px;font-size:13px;margin:6px 0}.bar i{display:block;height:14px;background:var(--acc);border-radius:4px}.bar span:first-child{width:70px;color:var(--mute)}
+code{background:var(--bg);padding:1px 6px;border-radius:5px;font-size:13px}
+@media(max-width:760px){.app{grid-template-columns:1fr}nav{position:static;height:auto;display:flex;overflow-x:auto;border-right:0;border-bottom:1px solid var(--line);padding:10px}
+.brand,.tag{display:none}nav button{white-space:nowrap;width:auto}main{padding:18px}}
